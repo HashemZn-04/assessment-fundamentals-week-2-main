@@ -113,6 +113,8 @@ class Marking:
     def mark(self) -> int:
         self.trainee_score = 0
         self.total_score = len(self._quiz.questions)
+        if self.total_score == 0:
+            return 0
         for question in self._quiz.questions:
             if question.chosen_answer == question.correct_answer:
                 self.trainee_score += 1
@@ -120,7 +122,17 @@ class Marking:
         return int(self.percentage_score)
 
     def generate_assessment(self) -> Assessment:
-        return Assessment(self._quiz.name, self._quiz.type, self.mark())
+        assessment = None
+        if self._quiz.type == "multiple-choice":
+            assessment = MultipleChoiceAssessment(
+                self._quiz.name, self.mark())
+        elif self._quiz.type == "presentation":
+            assessment = PresentationAssessment(
+                self._quiz.name, self.mark())
+        elif self._quiz.type == "technical":
+            assessment = TechnicalAssessment(
+                self._quiz.name, self.mark())
+        return assessment
 
 
 if __name__ == "__main__":
