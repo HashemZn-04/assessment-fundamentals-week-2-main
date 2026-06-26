@@ -1,16 +1,16 @@
 ============================= test session starts ==============================
-platform linux -- Python 3.14.0, pytest-8.4.2, pluggy-1.6.0
-rootdir: /home/runner/work/Assessment-Fundamentals-Week-2/Assessment-Fundamentals-Week-2
+platform linux -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0
+rootdir: /home/runner/work/assessment-fundamentals-week-2-main/assessment-fundamentals-week-2-main
 collected 0 items / 3 errors
 
 !!!!!!!!!!!!!!!!!!! Interrupted: 3 errors during collection !!!!!!!!!!!!!!!!!!!!
-============================== 3 errors in 0.12s ===============================
+============================== 3 errors in 0.13s ===============================
 ************* Module task_one
 Level-1/task_one.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Level-1/task_one.py:6:14: E0602: Undefined variable 'Trainee' (undefined-variable)
-Level-1/task_one.py:9:27: E0602: Undefined variable 'Assessment' (undefined-variable)
-Level-1/task_one.py:11:27: E0602: Undefined variable 'Assessment' (undefined-variable)
-Level-1/task_one.py:13:27: E0602: Undefined variable 'Assessment' (undefined-variable)
+Level-1/task_one.py:5:14: E0602: Undefined variable 'Trainee' (undefined-variable)
+Level-1/task_one.py:8:27: E0602: Undefined variable 'Assessment' (undefined-variable)
+Level-1/task_one.py:10:27: E0602: Undefined variable 'Assessment' (undefined-variable)
+Level-1/task_one.py:12:27: E0602: Undefined variable 'Assessment' (undefined-variable)
 ************* Module task_two
 Level-2/task_two.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 Level-2/task_two.py:19:14: E0602: Undefined variable 'Trainee' (undefined-variable)
