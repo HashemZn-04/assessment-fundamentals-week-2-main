@@ -21,9 +21,9 @@ class Trainee:
         Appends the given assessment in the add_assessment 
         arg to the assessments list.
         """
-        self.assessments.append(assessment)
         if not isinstance(assessment, Assessment):
             raise TypeError("You must enter an Assessment object!")
+        self.assessments.append(assessment)
 
     def get_assessment(self, name: str) -> Assessment | None:
         """
@@ -34,6 +34,19 @@ class Trainee:
             if assessment.name == name:
                 return assessment
 
+    def get_assessment_type(self, type: str) -> list[Assessment]:
+        if not isinstance(type, str):
+            raise TypeError('You must enter a string!')
+        elif self.type != "multiple-choice" and self.type != "presentation" and self.type != "technical":
+            raise ValueError(
+                'You must enter either multiple-choice, presentation, or technical for assessment types!')
+
+        assessment_type_list = []
+        for assessment in self.assessments:
+            if assessment.type == type:
+                assessment_type_list.append(assessment)
+        return assessment_type_list
+
 
 class Assessment:
     def __init__(self, name: str, type: str, score: float):
@@ -41,31 +54,33 @@ class Assessment:
         self.type = type
         self.score = score
 
-        if not isinstance(self.score, float):
+        if not isinstance(self.score, float) and not isinstance(self.score, int):
             raise TypeError("You must enter a float for assessment score!")
         if self.type != "multiple-choice" and self.type != "presentation" and self.type != "technical":
             raise ValueError(
                 "You must choose either multiple-choice, presentation or technical for assessment type.")
 
-    def calculate_score(self, score: int):
+    def calculate_score(self, score: float):
+        if not isinstance(score, float) and not isinstance(score, int):
+            raise TypeError('You must enter an float for score!')
         return score * self.weighting
 
 
 class MultipleChoiceAssessment(Assessment):
     def __init__(self, name: str, score: float):
-        super().__init__(name, score)
+        super().__init__(name, "multiple-choice", score)
         self.weighting = 0.7
 
 
 class PresentationAssessment(Assessment):
     def __init__(self, name: str, score: float):
-        super().__init__(name, score)
+        super().__init__(name, "presentation", score)
         self.weighting = 0.6
 
 
 class TechnicalAssessment(Assessment):
     def __init__(self, name: str, score: float):
-        super().__init__(name, score)
+        super().__init__(name, "technical", score)
         self.weighting = 1
 
 
