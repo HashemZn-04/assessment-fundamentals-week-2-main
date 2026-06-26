@@ -72,7 +72,7 @@ class Trainee:  # pylint: disable=too-few-public-methods
         return assessment_type_list
 
 
-class Assessment:  # pylint: disable=too-few-public-methods
+class Assessment:
     """
     Assessment superclass that passes off inheritance to the subclasses:
     Multiple-choice, presentation, and technical. It also has the 
@@ -87,10 +87,15 @@ class Assessment:  # pylint: disable=too-few-public-methods
 
         if not isinstance(self.score, float) and not isinstance(self.score, int):
             raise TypeError("You must enter a float for assessment score!")
+        if self.score < 0 or self.score > 100:
+            raise ValueError("You must enter a score between 0 and 100!")
         if self.assessment_type not in ('multiple-choice', 'presentation', 'technical'):
             raise ValueError(
                 "You must choose either multiple-choice, presentation"
                 " or technical for assessment assessment_type.")
+
+    def __str__(self):
+        return f"{self.assessment_type} assessment, with a score of {self.score}"
 
     def calculate_score(self):
         """Calculates the score of an assessment based on its given weighting."""
@@ -99,7 +104,7 @@ class Assessment:  # pylint: disable=too-few-public-methods
         return self.score * self.weighting
 
 
-class MultipleChoiceAssessment(Assessment):
+class MultipleChoiceAssessment(Assessment):  # pylint: disable=too-few-public-methods
     """"
     Multiple choice subclass for multiple choice
     based questions.
@@ -110,7 +115,7 @@ class MultipleChoiceAssessment(Assessment):
         self.weighting = 0.7
 
 
-class PresentationAssessment(Assessment):
+class PresentationAssessment(Assessment):  # pylint: disable=too-few-public-methods
     """
     Presentation subclass for presentation
     based questions.
@@ -121,7 +126,7 @@ class PresentationAssessment(Assessment):
         self.weighting = 0.6
 
 
-class TechnicalAssessment(Assessment):
+class TechnicalAssessment(Assessment):  # pylint: disable=too-few-public-methods
     """
     Technical Assessment subclass for technical
     based questions.

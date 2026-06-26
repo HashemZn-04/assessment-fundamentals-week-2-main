@@ -2,11 +2,22 @@ from datetime import date
 
 
 class Trainee:
+    """
+    Trainee subclass that contains all trainee information,
+    this includes returning age in years, adding an assessment
+    to the trainee's list of assessments, and a method get_assessment()
+    that returns a specified assessment from its assessment list.
+    """
+
     def __init__(self, name: str, email: str, date_of_birth: date):
         self.name = name
         self.email = email
         self.date_of_birth = date_of_birth
         self.assessments = []
+
+    def __str__(self):
+        return f"Trainee {self.name} (email: {self.email}) born: {
+            self.date_of_birth.strftime("%d/%m/%Y")}"
 
     def get_age(self) -> int:
         """Returns their age in years as an int."""
@@ -21,6 +32,8 @@ class Trainee:
         Appends the given assessment in the add_assessment 
         arg to the assessments list.
         """
+        if not isinstance(assessment, Assessment):
+            raise TypeError("You must enter an Assessment object!")
         self.assessments.append(assessment)
 
     def get_assessment(self, name: str) -> Assessment | None:
@@ -33,17 +46,27 @@ class Trainee:
                 return assessment
 
 
-class Assessment:
-    def __init__(self, name: str, type: str, score: float):
+class Assessment:  # pylint: disable=too-few-public-methods
+    """
+    Assessment class containing assessment type, its name, and score.
+    """
+
+    def __init__(self, name: str, assessment_type: str, score: float):
         self.name = name
-        self.type = type
+        self.assessment_type = assessment_type
         self.score = score
 
-        if not isinstance(self.score, float):
-            raise ValueError("You must enter a float for assessment score!")
-        if self.type != "multiple-choice" and self.type != "presentation" and self.type != "technical":
+        if not isinstance(self.score, float) and not isinstance(self.score, int):
+            raise TypeError("You must enter a float for assessment score!")
+        if self.score < 0 or self.score > 100:
+            raise ValueError("You must enter a score between 0 and 100!")
+        if self.assessment_type not in ('multiple-choice', 'presentation', 'technical'):
             raise ValueError(
-                "You must choose either multiple-choice, presentation or technical for assessment type.")
+                "You must choose either multiple-choice, presentation"
+                " or technical for assessment assessment_type.")
+
+    def __str__(self):
+        return f"{self.assessment_type} assessment, with a score of {self.score}"
 
 
 if __name__ == "__main__":

@@ -1,13 +1,13 @@
 from datetime import date
 
 
-class Trainee:  # pylint: disable=too-few-public-methods
+class Trainee:
     """
     Trainee subclass that contains all trainee information,
     this includes returning age in years, adding an assessment
     to the trainee's list of assessments, and a method get_assessment()
     that returns a specified assessment from its assessment list. Finally,
-    a method that also returns assessments matching a specified type.
+    a method that also returns assessments matching a specified assessment_type.
     """
 
     def __init__(self, name: str, email: str, date_of_birth: date):
@@ -15,6 +15,10 @@ class Trainee:  # pylint: disable=too-few-public-methods
         self.email = email
         self.date_of_birth = date_of_birth
         self.assessments = []
+
+    def __str__(self):
+        return f"Trainee {self.name} (email: {self.email}) born: {
+            self.date_of_birth.strftime("%d/%m/%Y")}"
 
     def get_age(self) -> int:
         """Returns their age in years as an int."""
@@ -42,43 +46,51 @@ class Trainee:  # pylint: disable=too-few-public-methods
             if assessment.name == name:
                 return assessment
 
-    def get_assessment_of_type(self, type: str) -> list[Assessment]:
+    def get_assessment_of_type(self, assessment_type: str) -> list[Assessment]:
         """
-        Returns a list of all assessments matching the type specified in this
+        Returns a list of all assessments matching the assessment_type 
+        specified in this
         function's position arg.
         """
-        if not isinstance(type, str):
+        if not isinstance(assessment_type, str):
             raise TypeError('You must enter a string!')
 
-        if type not in ('multiple-choice', 'presentation', 'technical'):
+        if assessment_type not in ('multiple-choice', 'presentation', 'technical'):
             raise ValueError(
-                "You must enter either multiple-choice, presentation, or technical for assessment types!")
+                "You must enter either multiple-choice, presentation"
+                ", or technical for assessment types!")
 
         assessment_type_list = []
         for assessment in self.assessments:
-            if assessment.type == type:
+            if assessment.assessment_type == assessment_type:
                 assessment_type_list.append(assessment)
         return assessment_type_list
 
 
-class Assessment:  # pylint: disable=too-few-public-methods
+class Assessment:
     """
     Assessment superclass that passes off inheritance to the subclasses:
     Multiple-choice, presentation, and technical. It also has the 
     calculate_score() method for returning the score of an assessment
-    multiplied by the weighting of the given assessment type.
+    multiplied by the weighting of the given assessment assessment_type.
     """
 
-    def __init__(self, name: str, type: str, score: float):
+    def __init__(self, name: str, assessment_type: str, score: float):
         self.name = name
-        self.type = type
+        self.assessment_type = assessment_type
         self.score = score
 
         if not isinstance(self.score, float) and not isinstance(self.score, int):
             raise TypeError("You must enter a float for assessment score!")
-        if self.type not in ('multiple-choice', 'presentation', 'technical'):
+        if self.score < 0 or self.score > 100:
+            raise ValueError("You must enter a score between 0 and 100!")
+        if self.assessment_type not in ('multiple-choice', 'presentation', 'technical'):
             raise ValueError(
-                "You must choose either multiple-choice, presentation or technical for assessment type.")
+                "You must choose either multiple-choice, presentation"
+                " or technical for assessment assessment_type.")
+
+    def __str__(self):
+        return f"{self.assessment_type} assessment, with a score of {self.score}"
 
     def calculate_score(self):
         """Calculates the score of an assessment based on its given weighting."""
@@ -87,7 +99,7 @@ class Assessment:  # pylint: disable=too-few-public-methods
         return self.score * self.weighting
 
 
-class MultipleChoiceAssessment(Assessment):
+class MultipleChoiceAssessment(Assessment):  # pylint: disable=too-few-public-methods
     """"
     Multiple choice subclass for multiple choice
     based questions.
@@ -98,7 +110,7 @@ class MultipleChoiceAssessment(Assessment):
         self.weighting = 0.7
 
 
-class PresentationAssessment(Assessment):
+class PresentationAssessment(Assessment):  # pylint: disable=too-few-public-methods
     """
     Presentation subclass for presentation
     based questions.
@@ -109,7 +121,7 @@ class PresentationAssessment(Assessment):
         self.weighting = 0.6
 
 
-class TechnicalAssessment(Assessment):
+class TechnicalAssessment(Assessment):  # pylint: disable=too-few-public-methods
     """
     Technical Assessment subclass for technical
     based questions.

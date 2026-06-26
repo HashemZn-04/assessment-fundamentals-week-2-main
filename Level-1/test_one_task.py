@@ -5,6 +5,7 @@ import pytest
 from dateutil.relativedelta import relativedelta
 from datetime import date, datetime
 
+
 def test_trainee():
     years_ago = date.today() - relativedelta(years=20)
 
@@ -20,7 +21,7 @@ def test_trainee():
 def test_assessment():
     assessment = Assessment("Python Basics", "multiple-choice", 90.1)
     assert assessment.name == "Python Basics"
-    assert assessment.type == "multiple-choice"
+    assert assessment.assessment_type == "multiple-choice"
     assert assessment.score == 90.1
 
 
