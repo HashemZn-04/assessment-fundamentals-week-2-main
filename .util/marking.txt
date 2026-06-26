@@ -5,9 +5,9 @@ collected 24 items
 
 Level-1/test_one_task.py .........                                       [ 37%]
 Level-2/test_two_task.py .......                                         [ 66%]
-Level-3/test_three_task.py .F...F.F                                      [100%]
+Level-3/test_three_task.py ........                                      [100%]
 
-========================= 3 failed, 21 passed in 0.04s =========================
+============================== 24 passed in 0.04s ==============================
 ************* Module task_one
 Level-1/task_one.py:44:0: C0301: Line too long (103/100) (line-too-long)
 Level-1/task_one.py:46:0: C0301: Line too long (105/100) (line-too-long)
@@ -63,17 +63,17 @@ Level-3/task_three.py:86:0: R0903: Too few public methods (1/2) (too-few-public-
 Level-3/task_three.py:92:0: C0115: Missing class docstring (missing-class-docstring)
 Level-3/task_three.py:92:0: R0903: Too few public methods (0/2) (too-few-public-methods)
 Level-3/task_three.py:100:0: C0115: Missing class docstring (missing-class-docstring)
-Level-3/task_three.py:102:23: W0621: Redefining name 'questions' from outer scope (line 128) (redefined-outer-name)
+Level-3/task_three.py:102:23: W0621: Redefining name 'questions' from outer scope (line 140) (redefined-outer-name)
 Level-3/task_three.py:102:51: W0622: Redefining built-in 'type' (redefined-builtin)
 Level-3/task_three.py:100:0: R0903: Too few public methods (0/2) (too-few-public-methods)
 Level-3/task_three.py:108:0: C0115: Missing class docstring (missing-class-docstring)
-Level-3/task_three.py:110:23: W0621: Redefining name 'quiz' from outer scope (line 135) (redefined-outer-name)
+Level-3/task_three.py:110:23: W0621: Redefining name 'quiz' from outer scope (line 147) (redefined-outer-name)
 Level-3/task_three.py:113:4: C0116: Missing function or method docstring (missing-function-docstring)
-Level-3/task_three.py:122:4: C0116: Missing function or method docstring (missing-function-docstring)
+Level-3/task_three.py:124:4: C0116: Missing function or method docstring (missing-function-docstring)
 Level-3/task_three.py:114:8: W0201: Attribute 'trainee_score' defined outside __init__ (attribute-defined-outside-init)
 Level-3/task_three.py:115:8: W0201: Attribute 'total_score' defined outside __init__ (attribute-defined-outside-init)
-Level-3/task_three.py:119:8: W0201: Attribute 'percentage_score' defined outside __init__ (attribute-defined-outside-init)
+Level-3/task_three.py:121:8: W0201: Attribute 'percentage_score' defined outside __init__ (attribute-defined-outside-init)
 
 ------------------------------------------------------------------
-Your code has been rated at 6.28/10 (previous run: 6.28/10, +0.00)
+Your code has been rated at 6.45/10 (previous run: 6.45/10, +0.00)
 
