@@ -35,6 +35,10 @@ class Trainee:
                 return assessment
 
     def get_assessment_of_type(self, type: str) -> list[Assessment]:
+        """
+        Returns a list of all assessments matching the type specified in this
+        function's position arg.
+        """
         if not isinstance(type, str):
             raise TypeError('You must enter a string!')
         elif type != "multiple-choice" and type != "presentation" and type != "technical":
@@ -61,6 +65,7 @@ class Assessment:
                 "You must choose either multiple-choice, presentation or technical for assessment type.")
 
     def calculate_score(self):
+        """Calculates the score of an assessment based on its given weighting."""
         if not isinstance(self.score, float) and not isinstance(self.score, int):
             raise TypeError('You must enter an float for score!')
         return self.score * self.weighting
