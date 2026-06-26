@@ -34,10 +34,10 @@ class Trainee:
             if assessment.name == name:
                 return assessment
 
-    def get_assessment_type(self, type: str) -> list[Assessment]:
+    def get_assessment_of_type(self, type: str) -> list[Assessment]:
         if not isinstance(type, str):
             raise TypeError('You must enter a string!')
-        elif self.type != "multiple-choice" and self.type != "presentation" and self.type != "technical":
+        elif type != "multiple-choice" and type != "presentation" and type != "technical":
             raise ValueError(
                 'You must enter either multiple-choice, presentation, or technical for assessment types!')
 
@@ -60,10 +60,10 @@ class Assessment:
             raise ValueError(
                 "You must choose either multiple-choice, presentation or technical for assessment type.")
 
-    def calculate_score(self, score: float):
-        if not isinstance(score, float) and not isinstance(score, int):
+    def calculate_score(self):
+        if not isinstance(self.score, float) and not isinstance(self.score, int):
             raise TypeError('You must enter an float for score!')
-        return score * self.weighting
+        return self.score * self.weighting
 
 
 class MultipleChoiceAssessment(Assessment):
