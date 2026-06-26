@@ -1,7 +1,15 @@
 from datetime import date
 
 
-class Trainee:
+class Trainee:  # pylint: disable=too-few-public-methods
+    """
+    Trainee subclass that contains all trainee information,
+    this includes returning age in years, adding an assessment
+    to the trainee's list of assessments, and a method get_assessment()
+    that returns a specified assessment from its assessment list. Finally,
+    a method that also returns assessments matching a specified type.
+    """
+
     def __init__(self, name: str, email: str, date_of_birth: date):
         self.name = name
         self.email = email
@@ -41,9 +49,10 @@ class Trainee:
         """
         if not isinstance(type, str):
             raise TypeError('You must enter a string!')
-        elif type != "multiple-choice" and type != "presentation" and type != "technical":
+
+        if type not in ('multiple-choice', 'presentation', 'technical'):
             raise ValueError(
-                'You must enter either multiple-choice, presentation, or technical for assessment types!')
+                "You must enter either multiple-choice, presentation, or technical for assessment types!")
 
         assessment_type_list = []
         for assessment in self.assessments:
@@ -52,7 +61,14 @@ class Trainee:
         return assessment_type_list
 
 
-class Assessment:
+class Assessment:  # pylint: disable=too-few-public-methods
+    """
+    Assessment superclass that passes off inheritance to the subclasses:
+    Multiple-choice, presentation, and technical. It also has the 
+    calculate_score() method for returning the score of an assessment
+    multiplied by the weighting of the given assessment type.
+    """
+
     def __init__(self, name: str, type: str, score: float):
         self.name = name
         self.type = type
@@ -60,7 +76,7 @@ class Assessment:
 
         if not isinstance(self.score, float) and not isinstance(self.score, int):
             raise TypeError("You must enter a float for assessment score!")
-        if self.type != "multiple-choice" and self.type != "presentation" and self.type != "technical":
+        if self.type not in ('multiple-choice', 'presentation', 'technical'):
             raise ValueError(
                 "You must choose either multiple-choice, presentation or technical for assessment type.")
 
@@ -72,18 +88,33 @@ class Assessment:
 
 
 class MultipleChoiceAssessment(Assessment):
+    """"
+    Multiple choice subclass for multiple choice
+    based questions.
+    """
+
     def __init__(self, name: str, score: float):
         super().__init__(name, "multiple-choice", score)
         self.weighting = 0.7
 
 
 class PresentationAssessment(Assessment):
+    """
+    Presentation subclass for presentation
+    based questions.
+    """
+
     def __init__(self, name: str, score: float):
         super().__init__(name, "presentation", score)
         self.weighting = 0.6
 
 
 class TechnicalAssessment(Assessment):
+    """
+    Technical Assessment subclass for technical
+    based questions.
+    """
+
     def __init__(self, name: str, score: float):
         super().__init__(name, "technical", score)
         self.weighting = 1
