@@ -1,22 +1,41 @@
 ============================= test session starts ==============================
 platform linux -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0
 rootdir: /home/runner/work/assessment-fundamentals-week-2-main/assessment-fundamentals-week-2-main
-collected 0 items / 3 errors
+collected 16 items / 1 error
 
-!!!!!!!!!!!!!!!!!!! Interrupted: 3 errors during collection !!!!!!!!!!!!!!!!!!!!
-============================== 3 errors in 0.13s ===============================
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+=============================== 1 error in 0.11s ===============================
 ************* Module task_one
+Level-1/task_one.py:44:0: C0301: Line too long (103/100) (line-too-long)
+Level-1/task_one.py:46:0: C0301: Line too long (105/100) (line-too-long)
 Level-1/task_one.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Level-1/task_one.py:5:14: E0602: Undefined variable 'Trainee' (undefined-variable)
-Level-1/task_one.py:8:27: E0602: Undefined variable 'Assessment' (undefined-variable)
-Level-1/task_one.py:10:27: E0602: Undefined variable 'Assessment' (undefined-variable)
-Level-1/task_one.py:12:27: E0602: Undefined variable 'Assessment' (undefined-variable)
+Level-1/task_one.py:4:0: C0115: Missing class docstring (missing-class-docstring)
+Level-1/task_one.py:26:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+Level-1/task_one.py:36:0: C0115: Missing class docstring (missing-class-docstring)
+Level-1/task_one.py:37:34: W0622: Redefining built-in 'type' (redefined-builtin)
+Level-1/task_one.py:44:11: R1714: Consider merging these comparisons with 'in' by using 'self.type not in ('multiple-choice', 'presentation', 'technical')'. Use a set instead if elements are hashable. (consider-using-in)
+Level-1/task_one.py:36:0: R0903: Too few public methods (0/2) (too-few-public-methods)
 ************* Module task_two
+Level-2/task_two.py:46:0: C0301: Line too long (103/100) (line-too-long)
+Level-2/task_two.py:48:0: C0301: Line too long (105/100) (line-too-long)
 Level-2/task_two.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Level-2/task_two.py:19:14: E0602: Undefined variable 'Trainee' (undefined-variable)
-Level-2/task_two.py:22:27: E0602: Undefined variable 'MultipleChoiceAssessment' (undefined-variable)
-Level-2/task_two.py:24:27: E0602: Undefined variable 'TechnicalAssessment' (undefined-variable)
-Level-2/task_two.py:26:27: E0602: Undefined variable 'MultipleChoiceAssessment' (undefined-variable)
+Level-2/task_two.py:4:0: C0115: Missing class docstring (missing-class-docstring)
+Level-2/task_two.py:28:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+Level-2/task_two.py:38:0: C0115: Missing class docstring (missing-class-docstring)
+Level-2/task_two.py:39:34: W0622: Redefining built-in 'type' (redefined-builtin)
+Level-2/task_two.py:46:11: R1714: Consider merging these comparisons with 'in' by using 'self.type not in ('multiple-choice', 'presentation', 'technical')'. Use a set instead if elements are hashable. (consider-using-in)
+Level-2/task_two.py:50:4: C0116: Missing function or method docstring (missing-function-docstring)
+Level-2/task_two.py:51:23: E1101: Instance of 'Assessment' has no 'weighting' member (no-member)
+Level-2/task_two.py:38:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+Level-2/task_two.py:54:0: C0115: Missing class docstring (missing-class-docstring)
+Level-2/task_two.py:56:8: E1120: No value for argument 'score' in method call (no-value-for-parameter)
+Level-2/task_two.py:54:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+Level-2/task_two.py:60:0: C0115: Missing class docstring (missing-class-docstring)
+Level-2/task_two.py:62:8: E1120: No value for argument 'score' in method call (no-value-for-parameter)
+Level-2/task_two.py:60:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+Level-2/task_two.py:66:0: C0115: Missing class docstring (missing-class-docstring)
+Level-2/task_two.py:68:8: E1120: No value for argument 'score' in method call (no-value-for-parameter)
+Level-2/task_two.py:66:0: R0903: Too few public methods (1/2) (too-few-public-methods)
 ************* Module task_three
 Level-3/task_three.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 Level-3/task_three.py:17:0: C0115: Missing class docstring (missing-class-docstring)
@@ -30,5 +49,5 @@ Level-3/task_three.py:35:23: W0621: Redefining name 'quiz' from outer scope (lin
 Level-3/task_three.py:33:0: R0903: Too few public methods (0/2) (too-few-public-methods)
 
 ------------------------------------------------------------------
-Your code has been rated at 0.00/10 (previous run: 0.00/10, +0.00)
+Your code has been rated at 4.91/10 (previous run: 4.91/10, +0.00)
 
