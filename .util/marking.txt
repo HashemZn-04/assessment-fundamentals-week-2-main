@@ -9,37 +9,20 @@ Level-3/test_three_task.py ........                                      [100%]
 
 ============================== 24 passed in 0.03s ==============================
 ************* Module task_one
-Level-1/task_one.py:44:0: C0301: Line too long (103/100) (line-too-long)
-Level-1/task_one.py:46:0: C0301: Line too long (105/100) (line-too-long)
 Level-1/task_one.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Level-1/task_one.py:4:0: C0115: Missing class docstring (missing-class-docstring)
-Level-1/task_one.py:26:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
-Level-1/task_one.py:36:0: C0115: Missing class docstring (missing-class-docstring)
-Level-1/task_one.py:37:34: W0622: Redefining built-in 'type' (redefined-builtin)
-Level-1/task_one.py:44:11: R1714: Consider merging these comparisons with 'in' by using 'self.type not in ('multiple-choice', 'presentation', 'technical')'. Use a set instead if elements are hashable. (consider-using-in)
-Level-1/task_one.py:36:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+Level-1/task_one.py:39:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
 ************* Module task_two
-Level-2/task_two.py:55:0: C0301: Line too long (106/100) (line-too-long)
-Level-2/task_two.py:81:0: C0301: Line too long (105/100) (line-too-long)
 Level-2/task_two.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Level-2/task_two.py:36:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
-Level-2/task_two.py:45:37: W0622: Redefining built-in 'type' (redefined-builtin)
-Level-2/task_two.py:72:34: W0622: Redefining built-in 'type' (redefined-builtin)
-Level-2/task_two.py:87:28: E1101: Instance of 'Assessment' has no 'weighting' member (no-member)
-Level-2/task_two.py:90:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-Level-2/task_two.py:101:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-Level-2/task_two.py:112:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+Level-2/task_two.py:40:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+Level-2/task_two.py:99:28: E1101: Instance of 'Assessment' has no 'weighting' member (no-member)
 ************* Module task_three
 Level-3/task_three.py:45:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
-Level-3/task_three.py:99:28: E1101: Instance of 'Assessment' has no 'weighting' member (no-member)
-Level-3/task_three.py:102:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-Level-3/task_three.py:113:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-Level-3/task_three.py:124:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-Level-3/task_three.py:135:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-Level-3/task_three.py:156:23: W0621: Redefining name 'questions' from outer scope (line 213) (redefined-outer-name)
-Level-3/task_three.py:150:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-Level-3/task_three.py:172:23: W0621: Redefining name 'quiz' from outer scope (line 220) (redefined-outer-name)
+Level-3/task_three.py:104:28: E1101: Instance of 'Assessment' has no 'weighting' member (no-member)
+Level-3/task_three.py:140:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+Level-3/task_three.py:161:23: W0621: Redefining name 'questions' from outer scope (line 218) (redefined-outer-name)
+Level-3/task_three.py:155:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+Level-3/task_three.py:177:23: W0621: Redefining name 'quiz' from outer scope (line 225) (redefined-outer-name)
 
 ------------------------------------------------------------------
-Your code has been rated at 8.25/10 (previous run: 8.25/10, +0.00)
+Your code has been rated at 9.15/10 (previous run: 9.15/10, +0.00)
 
